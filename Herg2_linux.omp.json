@@ -1,0 +1,271 @@
+{
+  "blocks": [
+    {
+      "type": "prompt",
+      "segments": [
+        {
+          "type": "root",
+          "style": "powerline",
+          "template": "<#000000>_ </>"
+        },
+        {
+          "template": " <#f80b79>{{ .Icon }} </>",
+          "foreground": "cyan",
+          "style": "diamond",
+          "leading_diamond": "<#f80b79>╭─⟬</>",
+          "type": "os",
+          "properties": {
+            "gentoo": "",
+            "opensuse": "",
+            "exclude_folders": ["C:/Program Files/Microsoft Visual Studio.*"],
+            "manjaro": "",
+            "mint": "",
+            "windows": "",
+            "arch": "",
+            "centos": "",
+            "raspbian": "",
+            "linux": "",
+            "debian": "",
+            "fedora": "",
+            "elementary": "",
+            "alpine": "",
+            "macos": ""
+          }
+        },
+        {
+          "foreground": "#f80b79",
+          "type": "shell",
+          "leading_diamond": "<#f80b79>╭─⟬</>",
+          "template": " <#f80b79>",
+          "properties": {
+            "style": "full",
+            "include_folders": ["C:/Program Files/Microsoft Visual Studio.*"]
+          },
+          "style": "diamond"
+        },
+        {
+          "template": " {{ .Path }} ",
+          "type": "path",
+          "properties": {
+            "folder_icon": "",
+            "folder_separator_icon": "  ",
+            "style": "full"
+          },
+          "style": "plain",
+          "foreground": "#ab22e6"
+        }
+      ],
+      "alignment": "left"
+    },
+    {
+      "alignment": "right",
+      "segments": [
+        {
+          "foreground": "#43CCEA",
+          "background": "#29315A",
+          "properties": {
+            "fetch_upstream_icon": true,
+            "fetch_stash_count": true,
+            "branch_max_length": 25,
+            "fetch_status": true
+          },
+          "type": "git",
+          "template": " {{ .UpstreamIcon }} {{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }}  {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }}  {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }}  {{ .StashCount }}{{ end }} ",
+          "foreground_templates": [
+            "{{ if and (.Working.Changed) (.Staging.Changed) }}#e514bc{{ end }}",
+            "{{ if and (gt .Ahead 0) (.Working.Changed) }}#f8fb79{{ end }}",
+            "{{ if and (gt .Ahead 0) (gt .Behind 0) }}#ff4500{{ end }}",
+            "{{ if gt .Ahead 0 }}#B388FF{{ end }}",
+            "{{ if gt .Behind 0 }}#7f16ff{{ end }}",
+            "{{ if or (.Working.Changed) (.Staging.Changed) }}#FF9248{{ end }}"
+          ],
+          "trailing_diamond": "",
+          "leading_diamond": " ",
+          "style": "diamond"
+        },
+        {
+          "background": "#29315A",
+          "properties": {
+            "fetch_version": true
+          },
+          "template": " {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}{{ end }}",
+          "trailing_diamond": "",
+          "type": "python",
+          "foreground": "#E4F34A",
+          "style": "diamond",
+          "leading_diamond": " "
+        },
+        {
+          "leading_diamond": " ",
+          "properties": {
+            "fetch_version": false
+          },
+          "style": "diamond",
+          "template": "ﳑ{{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}",
+          "background": "#29315A",
+          "trailing_diamond": "",
+          "type": "go",
+          "foreground": "#7FD5EA"
+        },
+        {
+          "properties": {
+            "fetch_version": false
+          },
+          "trailing_diamond": "",
+          "foreground": "#42E66C",
+          "leading_diamond": " ",
+          "background": "#29315A",
+          "type": "node",
+          "style": "diamond",
+          "template": "{{ if .PackageManagerIcon }}{{ .PackageManagerIcon }} {{ end }}{{ .Full }}"
+        },
+        {
+          "template": "{{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}",
+          "trailing_diamond": "",
+          "type": "ruby",
+          "background": "#29315A",
+          "properties": {
+            "fetch_version": false
+          },
+          "style": "diamond",
+          "foreground": "#E64747",
+          "leading_diamond": " "
+        },
+        {
+          "type": "java",
+          "properties": {
+            "fetch_version": true
+          },
+          "template": " {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}",
+          "trailing_diamond": "",
+          "leading_diamond": " ",
+          "style": "diamond",
+          "foreground": "#E64747",
+          "background": "#29314A"
+        },
+        {
+          "trailing_diamond": "",
+          "type": "shell",
+          "template": "",
+          "background": "#29315A",
+          "properties": {
+            "fetch_version": true,
+            "include_folders": [
+              "C:/Users/noahm/OneDrive/Prog-Projects/Scala.*",
+              "C:/Users/noahm/OneDrive/.*/*.scala",
+              "C:/Users/noahm/OneDrive/.*/scala.*"
+            ]
+          },
+          "foreground": "#E64747",
+          "leading_diamond": " ",
+          "style": "diamond"
+        },
+        {
+          "trailing_diamond": "",
+          "template": "{{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} ",
+          "type": "julia",
+          "style": "diamond",
+          "properties": {
+            "fetch_version": false
+          },
+          "leading_diamond": " ",
+          "foreground": "#9B6BDF",
+          "background": "#29315A"
+        },
+        {
+          "style": "diamond",
+          "background": "#4063D8",
+          "trailing_diamond": "",
+          "template": " {{ .Full }} ",
+          "type": "php",
+          "foreground": "#ffffff",
+          "leading_diamond": " ",
+          "properties": {
+            "fetch_version": false
+          }
+        }
+      ],
+      "type": "prompt"
+    },
+    {
+      "alignment": "left",
+      "segments": [
+        {
+          "foreground": "#CECE04",
+          "type": "root",
+          "style": "plain",
+          "template": " "
+        },
+        {
+          "foreground": "#CECE04",
+          "style": "plain",
+          "type": "python",
+          "template": "{{ if .Venv }}       {{ end }}"
+        },
+        {
+          "type": "exit",
+          "foreground": "#ff046d",
+          "style": "plain",
+          "template": "✖ {{ .Meaning }} "
+        },
+        {
+          "style": "diamond",
+          "leading_diamond": "<#31dfa2>╰─⟬</>",
+          "foreground": "#dedede",
+          "template": " $",
+          "type": "text"
+        }
+      ],
+      "newline": true,
+      "type": "prompt"
+    },
+    {
+      "type": "rprompt",
+      "segments": [
+        {
+          "properties": {
+            "charging_icon": " ",
+            "discharging_icon": " ",
+            "charged_icon": " "
+          },
+          "style": "diamond",
+          "template": "{{ if not .Error }}{{ .Icon }}{{ .Percentage }}{{ end }}   ",
+          "foreground_templates": [
+            "{{if eq \"Full\" .State.String}}#4caf50{{end}}",
+            "{{if eq \"Charging\" .State.String}}#40c4ff{{end}}",
+            "{{if eq \"Discharging\" .State.String}}#ff5722{{end}}"
+          ],
+          "foreground": "#193549",
+          "type": "battery"
+        },
+        {
+          "leading_diamond": "",
+          "type": "shell",
+          "trailing_diamond": "",
+          "foreground": "#00F7FF",
+          "style": "diamond",
+          "template": "<#ff046d>| </><white>in</> {{ .Name }} <white>at</> "
+        },
+        {
+          "type": "time",
+          "template": "{{.CurrentDate | date .Format }}",
+          "properties": {
+            "time_format": "15:04:05"
+          },
+          "foreground": "#fffb8a",
+          "style": "diamond"
+        },
+        {
+          "foreground": "#8822ee",
+          "type": "connection",
+          "style": "diamond",
+          "leading_diamond": " <#ff046d>|</>"
+        }
+      ]
+    }
+  ],
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "version": 2,
+  "console_title_template": "{{if .WSL}} {{end}}{{if .Root}}⚡ {{end}}{{.Shell}} in {{.PWD}}",
+  "final_space": true
+}
